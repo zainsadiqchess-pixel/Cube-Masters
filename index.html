@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cube Masters Banner</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-   
+  <title>Cube Masters</title>
 
+  <!-- Tailwind for navbar + hero only -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
     /* Typing animation */
     @keyframes typing {
       from { width: 0 }
@@ -26,105 +28,131 @@
       border-right: none;
     }
 
-    /* Animations */
-    @keyframes slideUp {
-      0% { opacity: 0; transform: translateY(40px); }
-      100% { opacity: 1; transform: translateY(0); }
+    @keyframes typing2 {
+      from { width: 0 }
+      to { width: 100% }
     }
-    @keyframes zoomIn {
-      0% { opacity: 0; transform: scale(0.9); }
-      100% { opacity: 1; transform: scale(1); }
+    @keyframes blink2 {
+      50% { border-color: transparent }
     }
-
-    .animate-slideUp { animation: slideUp 1s ease-out forwards; }
-    .animate-zoomIn { animation: zoomIn 1s ease-out forwards; }
-
-    /* Hidden by default for scroll animations */
-    .hidden-before {
-      opacity: 0;
-      transform: translateY(40px);
+    .typing2 {
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: .15em solid #35a9e1;
+      animation: typing2 3s steps(30, end) forwards, blink2 .75s step-end infinite;
+    }
+    .typing2.end2 {
+      border-right: none;
     }
   </style>
 </head>
-<body class="min-h-screen overflow-hidden font-sans">
-  <!-- Animated Background -->
-  <div id="particles" class="absolute inset-0 overflow-hidden"></div>
+<body class="font-sans relative">
+
+  <!-- Floating dots background -->
+  <div id="particles" class="absolute inset-0 -z-10 overflow-hidden"></div>
 
   <!-- Navigation Bar -->
   <nav class="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md shadow-sm z-50">
     <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
       <div class="flex items-center space-x-3">
-        <img src="logo.png" alt="Logo" class="h-10 w-auto">
+        <img src="real.logo.png" alt="Logo" class="h-10 w-auto">
         <span class="font-bold text-xl text-gray-800">Cube Masters</span>
       </div>
       <ul class="hidden md:flex space-x-8 font-medium text-gray-700">
-        <li><a href="#" class="hover:text-black transition">Home</a></li>
-        <li><a href="#" class="hover:text-black transition">About</a></li>
-        <li><a href="#" class="hover:text-black transition">Leadership</a></li>
-        <li><a href="#" class="hover:text-black transition">Join</a></li>
+        <li><a href="#about" class="hover:text-black transition">About</a></li>
+        <li><a href="#services" class="hover:text-black transition">Our Goals</a></li>
+        <li><a href="#contact" class="hover:text-black transition">Contact</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- Main Content -->
+  <!-- Hero Section -->
   <div class="relative z-10 min-h-screen flex items-center justify-center px-6 py-20">
     <div class="max-w-4xl mx-auto text-center">
-      <div class="mb-8 animate-zoomIn">
-        <img src="logo.png" alt="Cube Masters Logo" class="mx-auto w-40 md:w-52">
-      </div>
 
-      <!-- Hero Heading -->
-      <h1 id="heroTitle" class="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight typing">
-        Cube Masters
+      <!-- Image above title -->
+      <img src="real.logo.png" alt="Cube Masters" class="mx-auto mb-6 hero-logo">
+      <div class="tilte">
+      <h1 id="heroTitle" class="text-5xl md:text-7xl font-bold mb-8 leading-tight typing">
+        Welcome to Cube 
       </h1>
+      <h1 id="heroTitle2" class="text-5xl md:text-7xl font-bold mb-8 leading-tight typing2">
+        Masters </h1>
+        <div class="button-row animate-on-scroll">
+          <a href="#contact">
+            <button class="btn">Join Us</button>
+          </a>
+          <a href="#about">
+          <button class="btn btn-alt">Learn More</button>
+          </a>
+        </div>
+      </section>
       
-      <!-- Subtitle -->
-      <p class="text-xl md:text-2xl text-gray-800 mb-12 max-w-2xl mx-auto leading-relaxed font-light hidden-before" data-animate="slideUp">
-Will add more later but this is the cube masters offical website
-      </p>
       
-      <!-- Additional Info (3 containers) -->
-      <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-        <div class="p-6 rounded-2xl bg-white border hover:bg-gray-100 transition-all duration-300 hidden-before" data-animate="zoomIn">
-          <h3 class="text-2xl font-bold text-black mb-2">Feature One</h3>
-          <p class="text-gray-700">Add later.</p>
-        </div>
-        
-        <div class="p-6 rounded-2xl bg-white border hover:bg-gray-100 transition-all duration-300 hidden-before" data-animate="zoomIn">
-          <h3 class="text-2xl font-bold text-black mb-2">Feature Two</h3>
-          <p class="text-gray-700">add later</p>
-        </div>
-        
-        <div class="p-6 rounded-2xl bg-white border hover:bg-gray-100 transition-all duration-300 hidden-before" data-animate="zoomIn">
-          <h3 class="text-2xl font-bold text-black mb-2">Feature Three</h3>
-          <p class="text-gray-700">add later.</p>
-        </div>
-      </div>
     </div>
   </div>
+  </div>
+  
+  
 
-  <!-- Particles Script -->
+  <!-- About Section -->
+  <div id="about" class="about">
+    <h1 class="animate-on-scroll">About Us</h1>
+    <p class="animate-on-scroll">
+      We're a student-led club dedicated to exploring the fascinating world of Rubik's Cubes and twisty puzzles. Our mission is to foster problem-solving skills, enhance cognitive abilities, and create a fun, inclusive environment where students can challenge themselves and each other.
+    </p>
+    
+  </div>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <h1 class="animate-on-scroll">Our Goals</h1>
+
+    <div class="container-row">
+      <div class="service-box animate-on-scroll">
+
+
+        <h3>Learn & Teach</h3>
+        <p>Master various solving techniques and share knowledge with peers</p>
+      </div>
+      <div class="service-box animate-on-scroll">
+    
+     <h3>Engage</h3>
+        <p>Organize friendly competitions and collaborative challenges</p>
+      </div>
+      <div class="service-box animate-on-scroll">
+        <h3>Grow</h3>
+        <p>Cultivate a community of puzzle enthusiasts across grade levels</p>
+      </div>
+    </div>
+
+    
+  
+
+  <!-- Scripts -->
   <script>
+    /* Particle background */
     const container = document.getElementById("particles");
     const particleCount = 100;
     const particles = [];
-    const cubeColors = ["bg-red-400", "bg-green-400", "bg-blue-400", "bg-yellow-400", "bg-orange-400", "bg-white"];
+    const colors = ["#ef4444", "#22c55e", "#3b82f6", "#eab308", "#f97316", "#ffffff"];
 
     for (let i = 0; i < particleCount; i++) {
       const particle = document.createElement("div");
-      const colorClass = cubeColors[Math.floor(Math.random() * cubeColors.length)];
-      particle.className = "absolute rounded-full " + colorClass;
-      const size = Math.random() * 8 + 2;
-      const opacity = Math.random() * 0.6 + 0.2;
+      particle.style.position = "absolute";
+      particle.style.borderRadius = "50%";
+      const size = Math.random() * 6 + 2;
+      const color = colors[Math.floor(Math.random() * colors.length)];
       particle.style.width = size + "px";
       particle.style.height = size + "px";
-      particle.style.opacity = opacity;
+      particle.style.background = color;
+      particle.style.opacity = Math.random() * 0.6 + 0.2;
       container.appendChild(particle);
       particles.push({
         el: particle,
         x: Math.random() * 100,
         y: Math.random() * 100,
-        moveSpeed: Math.random() * 2 + 1,
+        moveSpeed: Math.random() * 2 + 0.5,
         direction: Math.random() * 360
       });
     }
@@ -150,27 +178,34 @@ Will add more later but this is the cube masters offical website
     }
     animateParticles();
 
-    // Remove typing caret after animation
+    /* Remove typing caret after animation */
     const heroTitle = document.getElementById("heroTitle");
     heroTitle.addEventListener("animationend", () => {
       heroTitle.classList.add("end");
     });
+    const heroTitle2 = document.getElementById("heroTitle2");
+    heroTitle2.addEventListener("animationend", () => {
+      heroTitle2.classList.add("end2");
+    });
 
-    // Scroll animations (play once)
-    const animatedElements = document.querySelectorAll("[data-animate]");
-    const observer = new IntersectionObserver(entries => {
+    /* Scroll animations */
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          const el = entry.target;
-          const animation = el.dataset.animate;
-          el.classList.remove("hidden-before");
-          el.classList.add("animate-" + animation);
-          observer.unobserve(el); // ✅ ensures animation plays only once
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target); // run once
         }
       });
     }, { threshold: 0.2 });
 
-    animatedElements.forEach(el => observer.observe(el));
+    elements.forEach(el => observer.observe(el));
+
+    /* Stagger for services */
+    document.querySelectorAll('.service-box').forEach((el, i) => {
+      el.style.setProperty('--delay', `${i * 0.3}s`);
+      el.classList.add('stagger');
+    });
   </script>
 </body>
 </html>
