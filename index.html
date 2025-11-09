@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cube Masters</title>
 
-  <!-- Tailwind for navbar + hero only -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css">
+
   <style>
     html {
       scroll-behavior: smooth;
@@ -25,12 +26,12 @@
     }
   </style>
 </head>
-<body class="font-sans relative">
+<body class="font-sans relative bg-gray-50">
 
-  <!-- Floating dots background -->
-  <div id="particles" class="absolute inset-0 -z-10 pointer-events-none overflow-hidden"></div>
+  <!-- Particle background -->
+  <div id="particles" class="fixed inset-0 -z-10 pointer-events-none"></div>
 
-  <!-- Navigation Bar -->
+  <!-- Navbar -->
   <nav class="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md shadow-sm z-50">
     <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
       <div class="flex items-center space-x-3">
@@ -48,49 +49,47 @@
   </nav>
 
   <!-- Hero Section -->
-  <div class="hero-section relative min-h-screen flex items-center justify-center px-6 py-20">
+  <section class="hero-section min-h-screen flex items-center justify-center px-6 py-20">
     <div class="max-w-4xl mx-auto text-center">
       <img src="real.logo.png" alt="Cube Masters" class="mx-auto mb-6 hero-logo">
-      <div class="title">
-        <h1 id="heroTitle" class="text-5xl md:text-7xl font-bold mb-8 leading-tight typing">
-          Welcome to Cube 
-        </h1>
-        <h1 id="heroTitle2" class="text-5xl md:text-7xl font-bold mb-8 leading-tight typing2">
-          Masters 
-        </h1>
-        <div class="button-row animate-on-scroll">
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfRNfIFngqah4DhPp6nZ-o4K5_zc9St8PHSQDhtO8XcX322Tw/viewform?usp=header">
-            <button class="btn">Join Us</button>
-          </a>
-          <a href="#about"><button class="btn btn-alt">Learn More</button></a>
-        </div>
+      <h1 class="text-5xl md:text-7xl font-bold mb-4">Welcome to Cube</h1>
+      <h1 class="text-5xl md:text-7xl font-bold mb-8">Masters</h1>
+      <div class="flex justify-center gap-4 animate-on-scroll">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfRNfIFngqah4DhPp6nZ-o4K5_zc9St8PHSQDhtO8XcX322Tw/viewform?usp=header">
+          <button class="btn px-6 py-2 rounded bg-blue-600 text-white hover:bg-blue-700 transition">Join Us</button>
+        </a>
+        <a href="#about">
+          <button class="btn px-6 py-2 rounded border border-blue-600 text-blue-600 hover:bg-blue-50 transition">Learn More</button>
+        </a>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- About Section -->
-  <section id="about" class="about py-20">
-    <h1 class="animate-on-scroll text-4xl font-bold mb-4">About Us</h1>
-    <p class="animate-on-scroll text-lg max-w-3xl mx-auto">
-      Cube Masters is a student-led club exploring Rubik's Cubes and twisty puzzles. 
-      Our mission is to develop problem-solving skills, enhance cognitive abilities, 
-      and create an inclusive, fun environment where students challenge themselves and each other.
-    </p>
+  <section id="about" class="py-20 bg-gray-50">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="animate-on-scroll text-4xl font-bold mb-4">About Us</h2>
+      <p class="animate-on-scroll text-lg">
+        Cube Masters is a student-led club exploring Rubik's Cubes and twisty puzzles. 
+        Our mission is to develop problem-solving skills, enhance cognitive abilities, 
+        and create an inclusive, fun environment where students challenge themselves and each other.
+      </p>
+    </div>
   </section>
 
   <!-- Goals Section -->
-  <section id="goals" class="services py-20">
-    <h1 class="animate-on-scroll text-4xl font-bold mb-8 text-center">Our Goals</h1>
-    <div class="container-row flex justify-center gap-8 flex-wrap">
-      <div class="service-box animate-on-scroll p-6 shadow rounded-lg bg-white">
+  <section id="goals" class="py-20 bg-white">
+    <h2 class="animate-on-scroll text-4xl font-bold mb-8 text-center">Our Goals</h2>
+    <div class="flex flex-wrap justify-center gap-8">
+      <div class="animate-on-scroll p-6 shadow-lg rounded-lg max-w-xs bg-gray-50 text-center">
         <h3 class="font-semibold text-xl mb-2">Learn & Teach</h3>
         <p>Master solving techniques and share knowledge with peers</p>
       </div>
-      <div class="service-box animate-on-scroll p-6 shadow rounded-lg bg-white">
+      <div class="animate-on-scroll p-6 shadow-lg rounded-lg max-w-xs bg-gray-50 text-center">
         <h3 class="font-semibold text-xl mb-2">Engage</h3>
         <p>Organize friendly competitions and collaborative challenges</p>
       </div>
-      <div class="service-box animate-on-scroll p-6 shadow rounded-lg bg-white">
+      <div class="animate-on-scroll p-6 shadow-lg rounded-lg max-w-xs bg-gray-50 text-center">
         <h3 class="font-semibold text-xl mb-2">Grow</h3>
         <p>Build a community of puzzle enthusiasts across grade levels</p>
       </div>
@@ -98,30 +97,30 @@
   </section>
 
   <!-- Events Section -->
-  <section id="events" class="events py-20">
-    <h1 class="animate-on-scroll text-4xl font-bold mb-4 text-center">Upcoming Events</h1>
-    <p class="subtitle animate-on-scroll text-center mb-8">Check back soon for workshops and competitions!</p>
-    <div class="container flex justify-center">
-      <div class="card animate-on-scroll p-6 shadow rounded-lg max-w-md bg-white">
-        <h2>No events scheduled yet</h2>
+  <section id="events" class="py-20 bg-gray-50">
+    <h2 class="animate-on-scroll text-4xl font-bold mb-4 text-center">Upcoming Events</h2>
+    <p class="animate-on-scroll text-center mb-8">Check back soon for workshops and competitions!</p>
+    <div class="flex justify-center">
+      <div class="animate-on-scroll p-6 shadow-lg rounded-lg max-w-md bg-white text-center">
+        <h3>No events scheduled yet</h3>
         <p>Join us for our weekly practice sessions to learn new moves and perfect your solves!</p>
       </div>
     </div>
   </section>
 
   <!-- Leadership Section -->
-  <section id="leadership" class="leadership py-20">
-    <h1 class="animate-on-scroll text-4xl font-bold mb-8 text-center">Meet Our Leadership</h1>
-    <div class="container-row flex justify-center gap-8 flex-wrap">
-      <div class="service-box animate-on-scroll p-6 shadow rounded-lg text-center bg-white">
+  <section id="leadership" class="py-20 bg-white">
+    <h2 class="animate-on-scroll text-4xl font-bold mb-8 text-center">Meet Our Leadership</h2>
+    <div class="flex flex-wrap justify-center gap-8">
+      <div class="animate-on-scroll p-6 shadow-lg rounded-lg bg-gray-50 text-center">
         <h3 class="font-semibold text-xl">Zain</h3>
         <p>President</p>
       </div>
-      <div class="service-box animate-on-scroll p-6 shadow rounded-lg text-center bg-white">
+      <div class="animate-on-scroll p-6 shadow-lg rounded-lg bg-gray-50 text-center">
         <h3 class="font-semibold text-xl">Ethan</h3>
         <p>Vice President</p>
       </div>
-      <div class="service-box animate-on-scroll p-6 shadow rounded-lg text-center bg-white">
+      <div class="animate-on-scroll p-6 shadow-lg rounded-lg bg-gray-50 text-center">
         <h3 class="font-semibold text-xl">Mrs. Ledbetter</h3>
         <p>Teacher Advisor</p>
       </div>
@@ -129,48 +128,42 @@
   </section>
 
   <!-- Join Section -->
-  <section id="join" class="join py-20">
-    <h1 class="animate-on-scroll text-4xl font-bold mb-4 text-center">Ready to Join?</h1>
-    <p class="subtitle animate-on-scroll text-center mb-8">
+  <section id="join" class="py-20 bg-gray-50">
+    <h2 class="animate-on-scroll text-4xl font-bold mb-4 text-center">Ready to Join?</h2>
+    <p class="animate-on-scroll text-center mb-8">
       Become part of our cubing community! No experience necessary — just bring your enthusiasm.
     </p>
-    <div class="card animate-on-scroll p-6 shadow rounded-lg max-w-md mx-auto text-center bg-white">
-      <h2>Sign Up Today!</h2>
+    <div class="animate-on-scroll p-6 shadow-lg rounded-lg max-w-md mx-auto text-center bg-white">
+      <h3 class="font-semibold text-xl mb-2">Sign Up Today!</h3>
       <p>Click the button below to open the signup form!</p>
-      <div class="button-row animate-on-scroll mt-4">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfRNfIFngqah4DhPp6nZ-o4K5_zc9St8PHSQDhtO8XcX322Tw/viewform?usp=header">
-          <button class="btn">Join Us</button>
-        </a>
-      </div>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfRNfIFngqah4DhPp6nZ-o4K5_zc9St8PHSQDhtO8XcX322Tw/viewform?usp=header">
+        <button class="btn mt-4 px-6 py-2 rounded bg-blue-600 text-white hover:bg-blue-700 transition">Join Us</button>
+      </a>
     </div>
   </section>
 
   <!-- Bio-Site Section -->
-  <section id="site" class="site py-20 bg-gray-50">
-    <h1 class="animate-on-scroll text-4xl font-bold mb-4 text-center">Bio-Site</h1>
-    <p class="subtitle animate-on-scroll text-center mb-12 max-w-2xl mx-auto">
-      Explore all our websites, projects, and media in one convenient place. Stay up-to-date with Cube Masters online!
+  <section id="site" class="py-20 bg-white">
+    <h2 class="animate-on-scroll text-4xl font-bold mb-4 text-center">Bio-Site</h2>
+    <p class="animate-on-scroll text-center mb-12 max-w-2xl mx-auto">
+      Explore all our websites, projects, and media in one convenient place.
     </p>
-
-    <div class="container-row flex flex-wrap justify-center gap-8">
-      <div class="card animate-on-scroll p-6 shadow-lg rounded-lg max-w-xs text-center bg-white">
-        <img src="bio_icon.png" alt="Bio-Site Icon" class="mx-auto mb-4 w-20 h-20">
-        <h2 class="font-semibold text-xl mb-2">Cube Masters Bio-Site</h2>
-        <p class="text-gray-500 text-sm mb-4">
-          All our websites, media, and resources are gathered in one easy-to-access location.
-        </p>
+    <div class="flex justify-center">
+      <div class="animate-on-scroll p-6 shadow-lg rounded-lg max-w-xs text-center bg-gray-50">
+        <h3 class="font-semibold text-xl mb-2">Cube Masters Bio-Site</h3>
+        <p class="text-gray-500 text-sm mb-4">All our websites, media, and resources are gathered in one easy-to-access location.</p>
         <a href="https://bio.site/cube_masters" target="_blank">
-          <button class="btn">Visit Bio-Site</button>
+          <button class="btn px-6 py-2 rounded bg-blue-600 text-white hover:bg-blue-700 transition">Visit Bio-Site</button>
         </a>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="footer bg-gray-100 py-10 mt-12">
-    <div class="footer-container max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-6">
+  <footer class="bg-gray-100 py-10">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-6">
       <div>
-        <div class="footer-logo flex items-center mb-4">
+        <div class="flex items-center mb-4">
           <img src="real.logo.png" alt="Cube Masters Logo" class="h-10 mr-2">
           <span>Cube Masters</span>
         </div>
@@ -190,7 +183,7 @@
 
       <div>
         <h3 class="font-semibold mb-2">Connect</h3>
-        <div class="social-icons flex gap-2">
+        <div class="flex gap-2">
           <a href="#"><i class="fab fa-instagram"></i></a>
           <a href="#"><i class="fab fa-facebook"></i></a>
           <a href="#"><i class="fab fa-youtube"></i></a>
@@ -204,68 +197,60 @@
         <p>WSCA</p>
       </div>
     </div>
-
-    <div class="footer-bottom mt-6 text-center text-gray-600">
+    <div class="text-center text-gray-600 mt-6">
       <p>© 2025 Cube Masters. All rights reserved.</p>
-      <div class="footer-links mt-2">
-        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
-      </div>
+      <div class="mt-2"><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></div>
     </div>
   </footer>
 
-  <!-- FontAwesome for icons -->
+  <!-- FontAwesome -->
   <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
 
-  <!-- Scripts -->
+  <!-- Particle JS -->
   <script>
-    /* Particle background */
     const container = document.getElementById("particles");
     const particleCount = 100;
     const particles = [];
     const colors = ["#ef4444", "#22c55e","#3b82f6","#eab308","#f97316","#ffffff"];
     for (let i = 0; i < particleCount; i++) {
-      const particle = document.createElement("div");
-      particle.style.position = "absolute";
-      particle.style.borderRadius = "50%";
-      const size = Math.random() * 6 + 2;
-      const color = colors[Math.floor(Math.random() * colors.length)];
-      particle.style.width = size + "px";
-      particle.style.height = size + "px";
-      particle.style.background = color;
-      particle.style.opacity = Math.random() * 0.6 + 0.2;
-      container.appendChild(particle);
-      particles.push({
-        el: particle,
-        x: Math.random() * 100,
-        y: Math.random() * 100,
-        moveSpeed: Math.random() * 2 + 0.5,
-        direction: Math.random() * 360
-      });
+      const p = document.createElement("div");
+      p.style.position = "absolute";
+      p.style.width = p.style.height = (Math.random()*6+2)+"px";
+      p.style.borderRadius = "50%";
+      p.style.background = colors[Math.floor(Math.random()*colors.length)];
+      p.style.opacity = Math.random()*0.6 + 0.2;
+      p.style.top = Math.random()*100 + "%";
+      p.style.left = Math.random()*100 + "%";
+      container.appendChild(p);
+      particles.push({el:p, x:Math.random()*100, y:Math.random()*100, speed: Math.random()*2+0.5, dir: Math.random()*360});
     }
+
     function animateParticles() {
       particles.forEach(p => {
-        let newX = p.x + Math.cos(p.direction * Math.PI / 180) * p.moveSpeed * 0.1;
-        let newY = p.y + Math.sin(p.direction * Math.PI / 180) * p.moveSpeed * 0.1;
-        if (newX <= 0 || newX >= 100) { p.direction = 180 - p.direction; newX = Math.max(0, Math.min(100, newX)); }
-        if (newY <= 0 || newY >= 100) { p.direction = -p.direction; newY = Math.max(0, Math.min(100, newY)); }
-        p.x = newX; p.y = newY;
-        p.el.style.left = p.x + "%"; p.el.style.top = p.y + "%";
+        let newX = p.x + Math.cos(p.dir*Math.PI/180)*p.speed*0.1;
+        let newY = p.y + Math.sin(p.dir*Math.PI/180)*p.speed*0.1;
+        if(newX<=0||newX>=100){p.dir=180-p.dir; newX=Math.max(0,Math.min(100,newX));}
+        if(newY<=0||newY>=100){p.dir=-p.dir; newY=Math.max(0,Math.min(100,newY));}
+        p.x=newX; p.y=newY;
+        p.el.style.left=p.x+"%"; p.el.style.top=p.y+"%";
       });
       requestAnimationFrame(animateParticles);
     }
     animateParticles();
 
-    /* Scroll animations */
+    // Animate on scroll
     const elements = document.querySelectorAll('.animate-on-scroll');
-    const observer = new IntersectionObserver((entries, observer) => {
+    const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
+        if(entry.isIntersecting){
           entry.target.classList.add('visible');
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.2 });
+    }, {threshold:0.2});
     elements.forEach(el => observer.observe(el));
   </script>
+
 </body>
 </html>
+
