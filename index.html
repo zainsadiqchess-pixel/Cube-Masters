@@ -12,12 +12,23 @@
     html {
       scroll-behavior: smooth;
     }
+
+    /* Animate on scroll fade-in */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
 <body class="font-sans relative">
 
   <!-- Floating dots background -->
-  <div id="particles" class="absolute inset-0 -z-10 overflow-hidden"></div>
+  <div id="particles" class="absolute inset-0 -z-10 pointer-events-none overflow-hidden"></div>
 
   <!-- Navigation Bar -->
   <nav class="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md shadow-sm z-50">
@@ -37,7 +48,7 @@
   </nav>
 
   <!-- Hero Section -->
-  <div class="hero-section relative z-10 min-h-screen flex items-center justify-center px-6 py-20">
+  <div class="hero-section relative min-h-screen flex items-center justify-center px-6 py-20">
     <div class="max-w-4xl mx-auto text-center">
       <img src="real.logo.png" alt="Cube Masters" class="mx-auto mb-6 hero-logo">
       <div class="title">
@@ -57,7 +68,7 @@
     </div>
   </div>
 
-  <!-- About Section / Bio -->
+  <!-- About Section -->
   <section id="about" class="about py-20">
     <h1 class="animate-on-scroll text-4xl font-bold mb-4">About Us</h1>
     <p class="animate-on-scroll text-lg max-w-3xl mx-auto">
@@ -70,16 +81,16 @@
   <!-- Goals Section -->
   <section id="goals" class="services py-20">
     <h1 class="animate-on-scroll text-4xl font-bold mb-8 text-center">Our Goals</h1>
-    <div class="container-row flex justify-center gap-8">
-      <div class="service-box animate-on-scroll p-6 shadow rounded-lg">
+    <div class="container-row flex justify-center gap-8 flex-wrap">
+      <div class="service-box animate-on-scroll p-6 shadow rounded-lg bg-white">
         <h3 class="font-semibold text-xl mb-2">Learn & Teach</h3>
         <p>Master solving techniques and share knowledge with peers</p>
       </div>
-      <div class="service-box animate-on-scroll p-6 shadow rounded-lg">
+      <div class="service-box animate-on-scroll p-6 shadow rounded-lg bg-white">
         <h3 class="font-semibold text-xl mb-2">Engage</h3>
         <p>Organize friendly competitions and collaborative challenges</p>
       </div>
-      <div class="service-box animate-on-scroll p-6 shadow rounded-lg">
+      <div class="service-box animate-on-scroll p-6 shadow rounded-lg bg-white">
         <h3 class="font-semibold text-xl mb-2">Grow</h3>
         <p>Build a community of puzzle enthusiasts across grade levels</p>
       </div>
@@ -91,7 +102,7 @@
     <h1 class="animate-on-scroll text-4xl font-bold mb-4 text-center">Upcoming Events</h1>
     <p class="subtitle animate-on-scroll text-center mb-8">Check back soon for workshops and competitions!</p>
     <div class="container flex justify-center">
-      <div class="card animate-on-scroll p-6 shadow rounded-lg max-w-md">
+      <div class="card animate-on-scroll p-6 shadow rounded-lg max-w-md bg-white">
         <h2>No events scheduled yet</h2>
         <p>Join us for our weekly practice sessions to learn new moves and perfect your solves!</p>
       </div>
@@ -101,16 +112,16 @@
   <!-- Leadership Section -->
   <section id="leadership" class="leadership py-20">
     <h1 class="animate-on-scroll text-4xl font-bold mb-8 text-center">Meet Our Leadership</h1>
-    <div class="container-row flex justify-center gap-8">
-      <div class="service-box animate-on-scroll p-6 shadow rounded-lg text-center">
+    <div class="container-row flex justify-center gap-8 flex-wrap">
+      <div class="service-box animate-on-scroll p-6 shadow rounded-lg text-center bg-white">
         <h3 class="font-semibold text-xl">Zain</h3>
         <p>President</p>
       </div>
-      <div class="service-box animate-on-scroll p-6 shadow rounded-lg text-center">
+      <div class="service-box animate-on-scroll p-6 shadow rounded-lg text-center bg-white">
         <h3 class="font-semibold text-xl">Ethan</h3>
         <p>Vice President</p>
       </div>
-      <div class="service-box animate-on-scroll p-6 shadow rounded-lg text-center">
+      <div class="service-box animate-on-scroll p-6 shadow rounded-lg text-center bg-white">
         <h3 class="font-semibold text-xl">Mrs. Ledbetter</h3>
         <p>Teacher Advisor</p>
       </div>
@@ -123,7 +134,7 @@
     <p class="subtitle animate-on-scroll text-center mb-8">
       Become part of our cubing community! No experience necessary — just bring your enthusiasm.
     </p>
-    <div class="card animate-on-scroll p-6 shadow rounded-lg max-w-md mx-auto text-center">
+    <div class="card animate-on-scroll p-6 shadow rounded-lg max-w-md mx-auto text-center bg-white">
       <h2>Sign Up Today!</h2>
       <p>Click the button below to open the signup form!</p>
       <div class="button-row animate-on-scroll mt-4">
@@ -211,7 +222,7 @@
     const container = document.getElementById("particles");
     const particleCount = 100;
     const particles = [];
-    const colors = ["#ef4444", "#22c55e", "#3b82f6", "#eab308", "#f97316", "#ffffff"];
+    const colors = ["#ef4444", "#22c55e","#3b82f6","#eab308","#f97316","#ffffff"];
     for (let i = 0; i < particleCount; i++) {
       const particle = document.createElement("div");
       particle.style.position = "absolute";
@@ -250,17 +261,11 @@
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          observer.unobserve(entry.target); // run once
+          observer.unobserve(entry.target);
         }
       });
     }, { threshold: 0.2 });
     elements.forEach(el => observer.observe(el));
-
-    /* Stagger services */
-    document.querySelectorAll('.service-box').forEach((el, i) => {
-      el.style.setProperty('--delay', `${i * 0.3}s`);
-      el.classList.add('stagger');
-    });
   </script>
 </body>
 </html>
