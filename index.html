@@ -8,6 +8,11 @@
   <!-- Tailwind for navbar + hero only -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
 <body class="font-sans relative">
 
@@ -26,6 +31,7 @@
         <li><a href="#goals" class="hover:text-black transition">Our Goals</a></li>
         <li><a href="#events" class="hover:text-black transition">Events</a></li>
         <li><a href="#join" class="hover:text-black transition">Join</a></li>
+        <li><a href="#site" class="hover:text-black transition">Bio-Site</a></li>
       </ul>
     </div>
   </nav>
@@ -42,7 +48,9 @@
           Masters 
         </h1>
         <div class="button-row animate-on-scroll">
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfRNfIFngqah4DhPp6nZ-o4K5_zc9St8PHSQDhtO8XcX322Tw/viewform?usp=header"><button class="btn">Join Us</button></a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfRNfIFngqah4DhPp6nZ-o4K5_zc9St8PHSQDhtO8XcX322Tw/viewform?usp=header">
+            <button class="btn">Join Us</button>
+          </a>
           <a href="#about"><button class="btn btn-alt">Learn More</button></a>
         </div>
       </div>
@@ -119,28 +127,33 @@
       <h2>Sign Up Today!</h2>
       <p>Click the button below to open the signup form!</p>
       <div class="button-row animate-on-scroll mt-4">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfRNfIFngqah4DhPp6nZ-o4K5_zc9St8PHSQDhtO8XcX322Tw/viewform?usp=header"><button class="btn">Join Us</button></a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfRNfIFngqah4DhPp6nZ-o4K5_zc9St8PHSQDhtO8XcX322Tw/viewform?usp=header">
+          <button class="btn">Join Us</button>
+        </a>
       </div>
     </div>
   </section>
 
-
-  <!-- Join Section -->
-  <section id="site" class="site py-20">
+  <!-- Bio-Site Section -->
+  <section id="site" class="site py-20 bg-gray-50">
     <h1 class="animate-on-scroll text-4xl font-bold mb-4 text-center">Bio-Site</h1>
-    <p class="subtitle animate-on-scroll text-center mb-8">
-Check out our Biosite — all our websites and media are in one place!
+    <p class="subtitle animate-on-scroll text-center mb-12 max-w-2xl mx-auto">
+      Explore all our websites, projects, and media in one convenient place. Stay up-to-date with Cube Masters online!
     </p>
-    <div class="card animate-on-scroll p-6 shadow rounded-lg max-w-md mx-auto text-center">
-      <h2>Biosite!</h2>
-      <p>Click the button below to view the Bio-Site</p>
-      <div class="button-row animate-on-scroll mt-4">
-        <a href="https://bio.site/cube_masters"><button class="btn">Click Here!</button></a>
+
+    <div class="container-row flex flex-wrap justify-center gap-8">
+      <div class="card animate-on-scroll p-6 shadow-lg rounded-lg max-w-xs text-center bg-white">
+        <img src="bio_icon.png" alt="Bio-Site Icon" class="mx-auto mb-4 w-20 h-20">
+        <h2 class="font-semibold text-xl mb-2">Cube Masters Bio-Site</h2>
+        <p class="text-gray-500 text-sm mb-4">
+          All our websites, media, and resources are gathered in one easy-to-access location.
+        </p>
+        <a href="https://bio.site/cube_masters" target="_blank">
+          <button class="btn">Visit Bio-Site</button>
+        </a>
       </div>
     </div>
   </section>
-
-  
 
   <!-- Footer -->
   <footer class="footer bg-gray-100 py-10 mt-12">
@@ -160,6 +173,7 @@ Check out our Biosite — all our websites and media are in one place!
           <li><a href="#goals">Our Goals</a></li>
           <li><a href="#events">Events</a></li>
           <li><a href="#join">Join</a></li>
+          <li><a href="#site">Bio-Site</a></li>
         </ul>
       </div>
 
@@ -193,7 +207,60 @@ Check out our Biosite — all our websites and media are in one place!
 
   <!-- Scripts -->
   <script>
-    // Particle animation code remains the same
+    /* Particle background */
+    const container = document.getElementById("particles");
+    const particleCount = 100;
+    const particles = [];
+    const colors = ["#ef4444", "#22c55e", "#3b82f6", "#eab308", "#f97316", "#ffffff"];
+    for (let i = 0; i < particleCount; i++) {
+      const particle = document.createElement("div");
+      particle.style.position = "absolute";
+      particle.style.borderRadius = "50%";
+      const size = Math.random() * 6 + 2;
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      particle.style.width = size + "px";
+      particle.style.height = size + "px";
+      particle.style.background = color;
+      particle.style.opacity = Math.random() * 0.6 + 0.2;
+      container.appendChild(particle);
+      particles.push({
+        el: particle,
+        x: Math.random() * 100,
+        y: Math.random() * 100,
+        moveSpeed: Math.random() * 2 + 0.5,
+        direction: Math.random() * 360
+      });
+    }
+    function animateParticles() {
+      particles.forEach(p => {
+        let newX = p.x + Math.cos(p.direction * Math.PI / 180) * p.moveSpeed * 0.1;
+        let newY = p.y + Math.sin(p.direction * Math.PI / 180) * p.moveSpeed * 0.1;
+        if (newX <= 0 || newX >= 100) { p.direction = 180 - p.direction; newX = Math.max(0, Math.min(100, newX)); }
+        if (newY <= 0 || newY >= 100) { p.direction = -p.direction; newY = Math.max(0, Math.min(100, newY)); }
+        p.x = newX; p.y = newY;
+        p.el.style.left = p.x + "%"; p.el.style.top = p.y + "%";
+      });
+      requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
+
+    /* Scroll animations */
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target); // run once
+        }
+      });
+    }, { threshold: 0.2 });
+    elements.forEach(el => observer.observe(el));
+
+    /* Stagger services */
+    document.querySelectorAll('.service-box').forEach((el, i) => {
+      el.style.setProperty('--delay', `${i * 0.3}s`);
+      el.classList.add('stagger');
+    });
   </script>
 </body>
 </html>
