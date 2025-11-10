@@ -246,6 +246,93 @@ font-weight: 500;
   margin-bottom: 6px;
 }
 
+
+
+<!--biosite-->
+.bio {
+  background: #fff;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.bio h1 {
+  font-size: 2.5rem; /* matches events */
+  margin-bottom: 15px;
+  font-weight: 700;
+  color: #ff3333;
+}
+
+.bio .subtitle {
+  font-size: 1rem;
+  color: gray;
+  margin-bottom: 40px;
+}
+
+.bio .card {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 40px;
+  background: #fff;
+  display: inline-block;
+  max-width: 550px; /* same as events card */
+  margin: 0 auto;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+  transition: 0.3s;
+  text-align: center;
+}
+
+.bio .card:hover {
+  border-color: #ff3333;
+  background: rgba(238, 238, 238, 0);
+}
+
+.bio .card h2 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #ff3333;
+  margin-bottom: 15px;
+}
+
+.bio .card p {
+  font-size: 0.9rem;
+  color: gray;
+  margin-bottom: 25px;
+}
+/* Footer */
+.footer {
+  background: #fff;
+  border-top: 1px solid #e5e7eb;
+  padding: 60px 40px 20px;
+  font-size: 14px;
+  color: #555;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+}
+
+.footer h3 {
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+.footer p,
+.footer a {
+  color: #555;
+  text-decoration: none;
+  line-height: 1.6;
+  display: block;
+  margin-bottom: 6px;
+}
+
+
+
 .footer a:hover {
   color: #000;
 }
